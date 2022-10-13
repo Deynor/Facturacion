@@ -14,7 +14,7 @@ class GeneratePDF
   
   #----Creación de PDF
   Prawn::Document.generate("hello.pdf") do
-    text "Hello World 2!"
+    text "Hello World Chris!"
   end
   
 end#Fin de la clase GeneratePDF
