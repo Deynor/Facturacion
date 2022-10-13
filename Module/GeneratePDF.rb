@@ -8,13 +8,31 @@ require 'prawn'
 
 class GeneratePDF
   
-  #----Variables
+  #----Variables locales
   
   direccionGuardar = ""
   
-  #----Creación de PDF
-  Prawn::Document.generate("hello.pdf") do
-    text "Hello World 2!"
-  end
+  #----Nombre de archivo
+  
+  filename = "#{$carpeta}.pdf"
+  
+  #----Meta datos
+  
+  info = {
+  Title: 'Factura Deynor',
+  Author: 'Deynor Rodríguez Rojas y Christopher Land Cordero Aguilar',
+  Subject: 'PDF de Facturación generado',
+  Keywords: 'Factura, Generado, PDF',
+  Creator: 'Chris y Deynor',
+  Producer: 'Prawn',
+  CreationDate: Time.now
+  }#fin de hash info
+  
+  #----Creación de documento
+  
+  Prawn::Document.generate(filename, info: info) do
+  text 'This is a test of setting metadata properties via the info option.'
+  text 'While the keys are arbitrary, the above example sets common attributes.'
+  end#Fin de Prawn
   
 end#Fin de la clase GeneratePDF
