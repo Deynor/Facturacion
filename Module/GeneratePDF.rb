@@ -12,6 +12,7 @@ class GeneratePDF
   
   direccionGuardar = ""
   
+  
   #----Creación de PDF
   Prawn::Document.generate("hello.pdf") do
     text "Hello World 2!"
